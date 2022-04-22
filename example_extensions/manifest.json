@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "test extension",
+    "version": "1.0",
+    "description": "test extension",
+    "content_scripts": [
+        {
+          "matches" : ["*://*/*"],
+          "js": [
+            "./contentController.js"
+          ],
+          "run_at": "document_end"
+        }
+      ],
+      "background": {
+        "scripts": ["./backgroundController.js"],
+        "persistent": true
+      },
+      "permissions": [
+        "tabs"
+      ]
+
+}
